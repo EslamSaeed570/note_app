@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notesapp/views/notes_view.dart';
-import 'package:notesapp/widgets/cosnstants.dart';
+import 'package:notesapp/views/widgets/cosnstants.dart';
 
 void main() async {
   await Hive.initFlutter();

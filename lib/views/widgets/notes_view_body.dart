@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/widgets/notes_list_view.dart';
+import 'package:notesapp/views/widgets/notes_list_view.dart';
 
 import 'custom_appbar.dart';
 
