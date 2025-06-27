@@ -7,6 +7,7 @@ import 'colors_list_view.dart';
 import 'cosnstants.dart';
 import 'custom_appbar.dart';
 import 'custom_text_form_field.dart';
+import 'edit_note_colors_list_view.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
@@ -67,37 +68,3 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   }
 }
 
-class EditNotesColorsListView extends StatefulWidget {
-  const EditNotesColorsListView({super.key, required this.note});
-  final NoteModel note;
-  @override
-  State<EditNotesColorsListView> createState() =>
-      _EditNotesColorsListViewState();
-}
-
-class _EditNotesColorsListViewState extends State<EditNotesColorsListView> {
-  int currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 2 * 38,
-      child: ListView.builder(
-          itemCount: kColors.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                currentIndex = index;
-                widget.note.color = kColors[index].value;
-
-                setState(() {});
-              },
-              child: ColorItem(
-                color: kColors[index],
-                isActive: currentIndex == index,
-              ),
-            );
-          }),
-    );
-  }
-}
