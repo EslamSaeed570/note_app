@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notesapp/cubits/notes_cuit/notes_cubit.dart';
 import 'package:notesapp/models/note_model.dart';
+import 'package:notesapp/views/widgets/show_snack_bar.dart';
 
 import 'colors_list_view.dart';
 import 'cosnstants.dart';
@@ -34,6 +35,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.subTitle = subTitle ?? widget.note.subTitle;
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).featchAllNotes();
+              showSnackBar(context, 'Edit note Success');
               Navigator.pop(context);
             },
             title: 'Edit Notes',
@@ -67,4 +69,3 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
     );
   }
 }
-

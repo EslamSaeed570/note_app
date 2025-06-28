@@ -5,6 +5,7 @@ import 'package:notesapp/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notesapp/cubits/notes_cuit/notes_cubit.dart';
 
 import 'add_note_form.dart';
+import 'show_snack_bar.dart';
 
 class AddNoteBottemSheet extends StatelessWidget {
   const AddNoteBottemSheet({super.key});
@@ -23,6 +24,7 @@ class AddNoteBottemSheet extends StatelessWidget {
           listener: (context, state) {
             if (state is AddNoteSuccess) {
               BlocProvider.of<NotesCubit>(context).featchAllNotes();
+              showSnackBar(context,'Add Note Success');
               Navigator.pop(context);
             }
             if (state is AddNoteFailure) {
@@ -41,4 +43,5 @@ class AddNoteBottemSheet extends StatelessWidget {
       ),
     );
   }
+
 }
