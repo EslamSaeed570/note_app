@@ -4,8 +4,6 @@ import 'package:notesapp/cubits/notes_cuit/notes_cubit.dart';
 import 'package:notesapp/models/note_model.dart';
 import 'package:notesapp/views/widgets/show_snack_bar.dart';
 
-import 'colors_list_view.dart';
-import 'cosnstants.dart';
 import 'custom_appbar.dart';
 import 'custom_text_form_field.dart';
 import 'edit_note_colors_list_view.dart';
@@ -48,7 +46,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onChanged: (value) {
               title = value;
             },
-            hintText: 'Title',
+            hintText: widget.note.title,
           ),
           const SizedBox(
             height: 15,
@@ -57,7 +55,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onChanged: (value) {
               subTitle = value;
             },
-            hintText: 'content',
+            hintText: widget.note.subTitle,
             maxLines: 5,
           ),
           const SizedBox(

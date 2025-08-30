@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notesapp/cubits/notes_cuit/notes_cubit.dart';
 import 'package:notesapp/models/note_model.dart';
 import 'package:notesapp/views/edit_note_view.dart';
+import 'package:notesapp/views/widgets/show_snack_bar.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
@@ -52,6 +53,7 @@ class NoteItem extends StatelessWidget {
                 onPressed: () {
                   note.delete();
                   BlocProvider.of<NotesCubit>(context).featchAllNotes();
+                  showSnackBar(context, 'delete note success');
                 },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
